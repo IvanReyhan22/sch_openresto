@@ -1,0 +1,43 @@
+@import "style.scss";
+
+#search-screen {
+    position: relative;
+    background-color: $green;
+    background-image: url("https://images.pexels.com/photos/3215519/pexels-photo-3215519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+
+    .mask {
+        z-index: 0;
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        background-color: rgba($black,.4 )
+    }
+
+    .search-container {
+        z-index: 1;
+        width: 60%;
+        margin: auto;
+
+        @include small-mobile {
+            width: 90%;
+        }
+
+        h1, p {
+            opacity: 1;
+            color: white;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        p{
+            margin-top: $sizing-standard;
+            font-size: 18px;
+        }
+    }
+
+}

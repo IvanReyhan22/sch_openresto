@@ -1,0 +1,76 @@
+@import "style.scss";
+///////////////////////////////////
+#receptionist-list{
+    margin: $sizing-standard * 2 0;
+
+    .pic-wrapper{
+        height: 300px;
+        width: 100%;
+        position: relative;
+
+        .profile-pic {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            box-shadow: 2px 2px 6px rgba($yellow,.5);
+        }
+
+        .mask:hover{
+            opacity: 1;
+        }
+
+        input[type=file] {
+            cursor: pointer;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0;
+        }
+    
+        .mask {
+            cursor: pointer;
+            z-index: 1;
+            display: flex;
+            position: absolute;
+            background: rgba($black, .2);
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+    
+            img {
+                width: 40px;
+                height: 40px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+    }
+
+    .btn-add{
+            border-radius: 50px;
+            background-color: $green;
+            color: white;
+        }
+        .btn-save{
+            background-color: $green;
+            color: white;
+        }
+        .card{
+            border: none;
+            box-shadow: 0px 2px 12px rgba(107, 107, 107, 0.25);
+            border-radius: 12px;
+            padding: 0;
+    
+            .title{ 
+                font-weight: bold;
+                font-size: 18px;
+            }
+        }
+    }

@@ -1,0 +1,193 @@
+@import "style.scss";
+
+#profile {
+    margin: $sizing-standard * 2 0 ;
+
+    .container {
+        position: relative;
+    }
+
+    .profile-section {
+
+        padding-bottom: $sizing-standard * 2;
+
+        @include small-mobile {
+            border-bottom: 2px solid $light-gray;
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+
+            @include small-mobile {
+                width: 160px;
+                height: 160px;
+            }
+
+        }
+
+        h2 {
+            @include tablet {
+                font-size: 30px;
+            }
+
+            @include small-mobile {
+                font-size: 30px;
+            }
+        }
+
+        .icon {
+            width: 15px;
+        }
+
+        button {
+            margin-top: $sizing-standard;
+            border: 0;
+            outline: 0;
+            border-radius: 50px;
+            padding: $sizing-standard / 3 $sizing-standard * 2;
+            background-color: $green;
+
+            font-family: $heading-font;
+            font-weight: 600;
+            color: white;
+
+            transition: .3s;
+
+            &:hover {
+                background-color: darken($green, 10%);
+            }
+        }
+    }
+
+    .right-section{
+
+        .nav-tabs {
+            display: none;
+            border-bottom: none;
+            display: flex;
+
+            .nav-item {
+
+                .nav-link {
+
+                    padding-top: $sizing-standard;
+                    padding-bottom: $sizing-standard;
+                    padding-left: 0;
+                    padding-right: $sizing-standard * 2;
+
+                    color: $gray;
+                    font-weight: 700;
+                    font-family: $heading-font;
+                    transition: .3s;
+
+                    @include small-mobile {
+                        padding-right: $sizing-standard;
+                    }
+
+                    &:hover {
+                        // border: 0;
+                        border-color: transparent;
+                    }
+
+                    &.active {
+                        color: $black;
+                        font-weight: 700;
+                        border-color: white;
+                    }
+
+                    @include mobile {
+                        font-size: 14px;
+                    }
+
+                    @include small-mobile {
+                        font-size: 14px;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+
+    .edit-profile {
+        box-sizing: border-box;
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+
+            @include small-mobile {
+                width: 160px;
+                height: 160px;
+            }
+
+        }
+
+        .input-container {
+            width: 50%;
+            
+            @include small-mobile {
+                width: 80%;
+            }
+        }
+
+        input {
+            width: 100%;
+            outline: none;
+            border: 0;
+            border-bottom: 2px solid $light-gray;
+            padding: $sizing-standard / 3 $sizing-standard ;
+            text-align: center;
+            font-family: $heading-font;
+            font-size: 26px;
+            font-weight: 500;
+            text-transform: capitalize;
+
+            @include small-mobile {
+                font-size: 20px;
+            }
+        }
+
+        button {
+            margin: $sizing-standard * 2 0;
+            border: 0;
+            outline: 0;
+            border-radius: 50px;
+            background-color: $green;
+
+            padding: $sizing-standard / 2 $sizing-standard * 2;
+            
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+            transition: .3s;
+
+            &:hover {
+                background-color: darken($green, 10%);
+            }
+        }
+
+    }
+
+
+    .back-btn {
+        position: absolute;
+        top: $sizing-standard;
+        width: 50px;
+        height: 50px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        padding: 14px;
+        box-shadow: 0px 8px 12px rgba($black,.2);
+        cursor: pointer;
+    }
+}

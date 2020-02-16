@@ -1,0 +1,225 @@
+@import "style.scss";
+
+div#filter-plan {
+    height:100%;
+
+    .left-side {
+        position: relative;
+        height: 100%;
+
+        .background {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .mask {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-color: rgba($black, .4);
+        }
+        
+        .content {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            display: flex;
+
+            .line {
+                width: 3px;
+                height: 140px;
+                background-color: white;
+                opacity: .8;
+                margin: 0 auto;
+
+                @include tablet {
+                    height: 80px;
+                }
+            }
+
+            h1 {
+                font-size: 72px;
+                font-weight: normal;
+                color: white;
+                font-family: $accent-font;
+
+                width: 100%;
+                margin-bottom: $sizing-standard / 2;
+                text-align: center;
+
+                @include tablet {
+                    font-size: 50px;
+                }
+
+                @include mobile {
+                    font-size: 40px;
+                }
+
+                @include small-mobile {
+                    font-size: 40px;
+                }
+            }
+            
+            P {
+                font-family: $content-font;
+                color: white;
+                opacity: .8;
+                font-size: 20px;
+
+                width: 100%;
+                margin: 0;
+                text-align: center;
+
+                @include tablet {
+                    font-size: 13px;
+                }
+
+                @include mobile {
+                    font-size: 16px;
+                }
+
+                @include small-mobile {
+                    font-size: 16px;
+                }
+
+            }
+        }
+    
+    }
+
+    .right-side {
+        position: relative;
+        padding: $sizing-standard * 2;
+        display: flex;
+
+        @include mobile {
+            padding: $sizing-standard;
+            height: 110vh;
+        }
+
+        @include small-mobile {
+            padding: $sizing-standard;
+            height: 110vh;
+        }
+
+        .navbar{
+            position: absolute;
+            top: $sizing-standard * 2; 
+            left: $sizing-standard * 2; 
+            right: $sizing-standard * 2;
+
+            @include mobile {
+                left: $sizing-standard / 4;
+                right: $sizing-standard / 4;
+            }
+
+            @include small-mobile {
+                left: $sizing-standard / 4;
+                right: $sizing-standard / 4;
+            }
+
+            .navbar-collapse .navbar-nav {
+                @include tablet {
+                    text-align: center;
+                    margin: 0 auto;
+                }
+
+                @include mobile {
+                    text-align: center;
+                    margin: 0 auto;
+                }
+
+                @include small-mobile{
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+
+            .navbar-collapse .nav-item {
+                margin: 0 $sizing-standard / 2;
+                
+                a {
+                    font-family: $heading-font;
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+        .content {
+            width: 100%;
+
+            @include mobile {
+                padding-top: $sizing-standard * 1;
+            }
+
+            @include small-mobile {
+                padding-top: $sizing-standard * 1;
+            }
+
+            .under-accent {
+                width: max-content;
+                position: relative;
+
+                h1 { 
+                    position: relative;
+                    margin: $sizing-standard 0;
+                    z-index: 1;
+
+                    @include mobile {
+                        font-size: 26px;
+                    }
+    
+                    @include small-mobile {
+                        font-size: 26px;
+                    }
+                }
+             
+                .custom-underline {
+                    position: absolute;
+                    z-index: 0;
+                    right: 0;
+                    bottom: $sizing-standard / 4;
+                    height: 12px;
+                    width: 200px;
+                    background-color: $green;
+
+                    @include mobile {
+                        width: 130px;
+                        bottom: $sizing-standard / 6;
+                    }
+    
+                    @include small-mobile {
+                        width: 130px;
+                        bottom: $sizing-standard / 6;
+                    }
+                }
+            }
+
+            h6 {
+                text-transform: uppercase;
+                font-weight: normal;
+            }
+            
+        }
+
+        .btn-reposition {
+            position: absolute;
+            bottom: $sizing-standard * 2.5;
+            right: $sizing-standard * 2;
+
+            @include mobile {
+                width: 130px;
+                bottom: $sizing-standard * 2;
+            }
+
+            @include small-mobile {
+                width: 130px;
+                bottom: $sizing-standard * 2;
+            }
+
+        }
+
+    }
+
+}

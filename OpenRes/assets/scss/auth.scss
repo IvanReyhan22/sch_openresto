@@ -1,0 +1,77 @@
+@import "style.scss";
+
+#login, #register{
+  background-color: $green;
+  background-image: url('../images/nathan-dumlao-X_bbCAYzlTs-unsplash.jpg');
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+
+  @include tablet {
+    background-position: right;
+  }
+
+  .overlay {
+    margin-top: $sizing-standard;
+    margin: auto auto auto $sizing-standard * 4;
+    background-color: white;
+    padding: $sizing-standard * 1.5 $sizing-standard ;
+    width: 500px;
+
+    @include tablet {
+      width: 100%;
+      margin : auto $sizing-standard * 2;
+    }
+
+    @include mobile {
+      margin : $sizing-standard;
+    }
+
+    @include small-mobile {
+      margin : $sizing-standard;
+    }
+
+    .logo-img {
+      margin-bottom: $sizing-standard;
+
+      .logo{
+        width: 90px;          
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    h4 {
+      margin-bottom: $sizing-standard * 2;
+      font-family: $heading-font;
+
+      @include small-mobile {
+          font-size: 20px;
+      }
+    }
+
+    form{
+      margin-bottom: $sizing-standard / 4;
+      .form-group{
+        margin-bottom: $sizing-standard;
+      }
+      .btn{
+        background-color: #89B758;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        text-transform: uppercase;
+      }
+    }
+    p{
+      color: black;
+      .register{
+        color: #89B758;
+      }
+    }
+
+  }
+}

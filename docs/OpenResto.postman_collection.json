@@ -1,0 +1,2607 @@
+{
+	"info": {
+		"_postman_id": "1d979c96-bc08-4dc8-bc76-441c1d967cc1",
+		"name": "OpenResto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@openresto.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Users",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user1234",
+									"description": "required|string|min:8|max:12|confirmed",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "user1234",
+									"description": "required|string|min:8|max:12",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "User",
+									"description": "required|string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register (SuperAdmin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenSuperAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Users",
+									"description": "required|string|min:5",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@mail.com",
+									"description": "required|email|unique:users,email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user1234",
+									"description": "required|string|min:8|max:12|confirmed",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "user1234",
+									"description": "required|string|min:8|max:12",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "SuperAdmin",
+									"description": "required|string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/register/superadmin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register",
+								"superadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register (Resepsionis)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Users",
+									"description": "required|string|min:5",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@mail.com",
+									"description": "required|email|unique:users,email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user1234",
+									"description": "required|string|min:8|max:12|confirmed",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "user1234",
+									"description": "required|string|min:8|max:12",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "SuperAdmin",
+									"description": "required|string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/register/superadmin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"register",
+								"superadmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer ",
+								"description": "bearer + token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/refresh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "",
+									"description": "required|email",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/forgot-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/password/reset",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"password",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Facility",
+			"item": [
+				{
+					"name": "Index Facility",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/facility",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"facility"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Facility",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/facility/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"facility",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Facility",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenSuperAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "Free Wifi",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "fa fa-wifi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/facility",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"facility"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Facility",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/facility/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"facility",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy Facility",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenSuperAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/facility/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"facility",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Kategori",
+			"item": [
+				{
+					"name": "Store Kategori",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "restoran_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "Minuman",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/kategori",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kategori"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Index Kategori",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/restoran/1/kategori",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"1",
+								"kategori"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Kategori (Default)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/kategori/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kategori",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Kategori",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "Minuman",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/kategori/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kategori",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Kategori",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/kategori/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kategori",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Kota",
+			"item": [
+				{
+					"name": "Index Kota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/kota",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Kota",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "provinsi_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/kota",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kota"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Kota",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "provinsi_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/kota/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kota",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy Kota",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/kota/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kota",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Kota",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/kota/150",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"kota",
+								"150"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Meja",
+			"item": [
+				{
+					"name": "Index Meja",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/meja",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"meja"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Meja",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/meja/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"meja",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Meja",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "restoran_id",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "no_meja",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/meja",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"meja"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Meja",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "no_meja",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "foto[]",
+									"type": "file",
+									"src": "/home/davidsurya/Downloads/Ayam-Goreng-Nelongso.jpg"
+								},
+								{
+									"key": "status",
+									"value": "Available",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "kapasitas",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "harga",
+									"value": "15000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/meja/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"meja",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Meja",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/meja/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"meja",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Index Menu (Default)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/menu",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Menu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "Roti Coklat",
+									"type": "text"
+								},
+								{
+									"key": "kategori_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "Roti",
+									"type": "text"
+								},
+								{
+									"key": "harga",
+									"value": "5000",
+									"type": "text"
+								},
+								{
+									"key": "foto[]",
+									"type": "file",
+									"src": "/home/davidsurya/Downloads/index.jpeg"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "restoran_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/menu",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Menu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "atau {{tokenResepsionis}}",
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "kategori_id",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deskripsi",
+									"value": "Teh Hitam dengan rasa manis dari gula alami",
+									"type": "text"
+								},
+								{
+									"key": "harga",
+									"value": "4000",
+									"type": "text"
+								},
+								{
+									"key": "foto[]",
+									"type": "file",
+									"src": "/home/davidsurya/Downloads/unnamed.jpg"
+								},
+								{
+									"key": "status",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/menu/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Menu (Default)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/menu/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Menu",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/menu/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"menu",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Index Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"description": "atau {{tokenSuperAdmin}} atau {{tokenAdmin}} atau {{tokenResepsionis}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/profile",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "atau {{tokenSuperAdmin}} atau {{tokenAdmin}} atau {{tokenResepsionis}}",
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenUser}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "David",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "old_password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "new_password",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "new_password_confirmation",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/profile/edit",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Provinsi",
+			"item": [
+				{
+					"name": "Index Provinsi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/provinsi",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"provinsi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Provinsi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/provinsi/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"provinsi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Provinsi",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/provinsi",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"provinsi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Provinsi",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/provinsi/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"provinsi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy Provinsi",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenSuperAdmin}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/provinsi/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"provinsi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Rating",
+			"item": [
+				{
+					"name": "Index Rating",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/restoran/1/rating",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"1",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Rating",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "restoran_id",
+									"value": "",
+									"description": "required|numeric|exists:restoran,id",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"description": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/rating",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Rating",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/rating/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"rating",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Rating",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "",
+									"description": "sometimes|required",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "",
+									"description": "sometimes|string",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"value": "",
+									"description": "sometimes|image",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/rating/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"rating",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy Rating",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"description": "atau {{tokenSuperAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/rating/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"rating",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reserve",
+			"item": [
+				{
+					"name": "Store Reserve",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "restoran_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "meja_id[]",
+									"value": "1, 2",
+									"type": "text"
+								},
+								{
+									"key": "menu_id[]",
+									"value": "1, 2",
+									"type": "text"
+								},
+								{
+									"key": "qty[]",
+									"value": "2, 2",
+									"type": "text"
+								},
+								{
+									"key": "mulai",
+									"value": "2020-01-28 14:00:00",
+									"type": "text"
+								},
+								{
+									"key": "selesai",
+									"value": "2020-01-28 15:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/reserve",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Reserve",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"description": "atau {{tokenResepsionis}} tetapi harus ada data pada form-data",
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{tokenUser}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "paid",
+									"value": "",
+									"description": "sometimes|required|numeric",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/reserve/1-200129-001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reserve",
+								"1-200129-001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Index Reserve",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/reserve/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reserve",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Reserve",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"description": "atau {{tokenAdmin}} atau {{tokenResepsionis}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/reserve/1-200129-001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reserve",
+								"1-200129-001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Destroy Reserve",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"description": "atau {{tokenAdmin}} atau {{tokenResepsionis}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/reserve/1-200129-001",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reserve",
+								"1-200129-001"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Restoran",
+			"item": [
+				{
+					"name": "Store Restoran",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"description": "bearer + token",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "Starbucks",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "Semanggi",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "deskripsi",
+									"value": "Coffee Shop",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "Kopi, Free Wifi",
+									"description": "string",
+									"type": "text"
+								},
+								{
+									"key": "kota_id",
+									"value": "156",
+									"description": "required|numeric|exists:kota,id",
+									"type": "text"
+								},
+								{
+									"key": "foto[]",
+									"description": "image",
+									"type": "file",
+									"src": "/home/davidsurya/Downloads/sta.jpeg"
+								},
+								{
+									"key": "logo",
+									"description": "required|image",
+									"type": "file",
+									"src": "/home/davidsurya/Downloads/starbucks.jpeg"
+								},
+								{
+									"key": "jml_meja",
+									"value": "25",
+									"description": "required|numeric",
+									"type": "text"
+								},
+								{
+									"key": "facility[]",
+									"value": "1, 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/restoran",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Restoran",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"description": "atau {{tokenSuperAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/restoran/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Restoran (Default)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/restoran/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Restoran",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "alamat",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "deskripsi",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "foto[]",
+									"type": "file",
+									"src": [
+										"/home/davidsurya/Downloads/sta.jpeg",
+										"/home/davidsurya/Downloads/unnamed.jpg"
+									]
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/home/davidsurya/Downloads/starbucks.jpeg"
+								},
+								{
+									"key": "jml_meja",
+									"value": "45",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "Free Wifi, Mosque",
+									"type": "text"
+								},
+								{
+									"key": "kota_id",
+									"value": "35",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/restoran/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Index Restoran (Default)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/restoran",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Restoran (With Meja)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/restoran/2/meja",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"2",
+								"meja"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Restoran (With Menu & Kategori)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/restoran/1/kategori/menu",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"1",
+								"kategori",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Restoran",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lokasi",
+									"value": "Kota Surabaya, Jawa Timur",
+									"type": "text"
+								},
+								{
+									"key": "jml_meja",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/restoran/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"restoran",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Saldo",
+			"item": [
+				{
+					"name": "Index Saldo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/saldo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"saldo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Saldo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jumlah",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "foto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/saldo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"saldo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Saldo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/api/saldo/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"saldo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

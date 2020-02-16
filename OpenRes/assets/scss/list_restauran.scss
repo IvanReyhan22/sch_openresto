@@ -1,0 +1,69 @@
+@import "style.scss";
+
+#list-restaurant {
+    cursor: unset;
+    padding-bottom: $sizing-standard;
+    .tag{
+        padding: $sizing-standard - 10 0;   
+        border-top: thin solid $light-gray;
+        border-bottom: thin solid $light-gray;
+        margin-bottom: $sizing-standard;
+
+        .container .row{
+
+            .btn{
+                background-color: $green;
+                color: white;
+                border-radius: 50px;
+                margin-right: $sizing-standard;
+                
+            }
+
+        }
+
+    }
+    
+    .container{
+        .left-container{
+            .card .card-body{
+
+                h5{
+                    font-size: 20px;
+                    margin-bottom: 15px;
+                }
+
+                p{
+                    font-size: 16px;
+                    color: $gray;
+                    margin-bottom: 10px;
+                }
+
+                .search-container {
+                    border: 2px solid $light-gray;
+                    border-radius: $border-standard * 2;
+                    padding: $sizing-standard / 4 $sizing-standard / 2;
+
+                    input {
+                        border: 0;
+                        outline: none;
+                        font-family: $heading-font;
+                        text-align: right;
+
+                    }
+                }
+
+            }
+        }
+        .right-container{
+            cursor: unset;
+            .tagline{
+                font-weight: normal;
+                cursor: unset;
+            }
+
+            .empty-placeholder {
+                color: $gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+@import "style.scss";
+
+#pesanan-content{
+    margin: $sizing-standard*2 0;
+
+    .card{
+        border: none;
+        box-shadow: 0px 2px 12px rgba(107, 107, 107, 0.25);
+        border-radius: 12px;
+    }
+
+    .right-container{
+        .row{
+            .detail{
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .code{
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .btn{
+                border-radius: 50px;
+                background-color: $green;
+                color: white;
+            }
+
+            .desc{
+                .title{
+                    font-weight: 500;
+                    font-size: 11px;
+                    color: #A1A1A1;
+                }
+                .value{
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #131313;
+                }
+            }
+
+            .title{
+                font-weight: 500;
+                font-size: 13px;
+                color: #A1A1A1;
+            }
+
+            .name{
+                font-weight: 500;
+                font-size: 14px;
+                color: $green;
+            }
+            .address{
+                font-weight: 500;
+                font-size: 14px;
+
+            }
+        }
+    }
+}

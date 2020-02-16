@@ -1,0 +1,57 @@
+// Sizing
+$desktop-width: 1025px;
+$tablet-width: 769px;
+$mobile-width: 426px;
+$small-mobile-width: 376px;
+$sizing-standard: 20px;
+$border-standard: 2px;
+
+$widescreen-container: 1200px;
+$desktop-container: 960px;
+$tablet-container: 720px;
+$mobile-container: 100%;
+
+// Color
+$green: #89B758;
+$yellow: #FCBE37;
+$red: #E8262E;
+
+$black: #131313;
+$gray: #787878;
+$dark-gray: #333333;
+$light-gray: #CECECE;
+
+// Font Weight
+$heavy: 800;
+$bold: 700;
+$semibold: 600;
+$medium: 500;
+$regular: 400;
+
+$base-color: #F6F6F6;
+
+// Responsive Funtion
+
+@mixin desktop {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}){
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width: #{$small-mobile-width}) and (max-width: #{$mobile-width}){
+        @content;
+    }
+}
+
+@mixin small-mobile {
+    @media (max-width: #{$small-mobile-width}){
+        @content;
+    }
+}

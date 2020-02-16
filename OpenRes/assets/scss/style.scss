@@ -1,0 +1,223 @@
+@import "utilities/variable";
+@import "utilities/font";
+
+$heading-font: 'SF-Pro-Display';
+$content-font: 'Roboto';
+$accent-font: 'Satisfy';
+
+// Reset
+
+html,
+body{
+    height: 100% !important;
+    margin: 0 !important;
+}
+
+* {
+    font-family: $heading-font;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    margin-bottom: $sizing-standard / 2;
+
+    li {
+        font-family: $content-font;
+        margin: 0;
+        padding: 0;
+        color: $gray;
+    }
+}
+
+p {
+    font-family: $content-font;
+    color: $gray;
+    margin-bottom: $sizing-standard / 2;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+
+    a { 
+        font-family: $content-font;
+        font-weight: 700;
+        color: $gray;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font;
+    font-weight: 700;
+    color: $black;
+    margin: 0;
+    padding: 0;
+    margin-bottom: $sizing-standard;
+}
+
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    padding-right: $sizing-standard / 2;
+    padding-left: $sizing-standard / 2;
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: $widescreen-container;
+    padding: 0 $sizing-standard / 2;
+
+    @include desktop {
+        max-width: $desktop-container;
+    }
+
+    @include tablet {
+        max-width: $tablet-container;
+    }
+
+    @include mobile {
+        max-width: $mobile-container;
+        padding: 0 $sizing-standard;
+    }
+
+    @include small-mobile {
+        max-width: $mobile-container;
+        padding: 0 $sizing-standard;
+    }
+}
+
+.row {
+    margin-right: - $sizing-standard / 2 ;
+    margin-left: - $sizing-standard / 2 ;
+}
+
+.clear-both {
+    clear: both;
+}
+
+#logo {
+    width: 120px;
+    object-fit: contain;
+}
+
+.hide-small {
+    @include small-mobile {
+        display: none;
+    }
+}
+
+.lg-hide {
+    display: none;
+
+    @include desktop {
+        display: none;
+    }
+
+    @include tablet {
+        display: unset;
+    }
+
+    @include small-mobile {
+        display: unset;
+    }
+}
+
+
+// Navbar
+
+#navbar {
+    padding: $sizing-standard / 2 0;
+    border: .5px solid darken($base-color, 10%);
+
+    .navbar-brand .back-button {
+        display: none;
+
+        @include small-mobile {
+            display: unset;
+        }
+
+    }
+
+    @include small-mobile {
+        .container {
+            padding: 0 $sizing-standard;  
+        }
+    }
+
+    #search, #search-responsive {
+        margin-left: $sizing-standard - 5;
+        .input-group{
+            height: 45px;
+            border: .5px solid darken($base-color, 10%);
+            border-radius: $border-standard * 4;
+            box-shadow: 0px 1px 6px rgba($black, .15);
+
+            .input-group-addon button{
+                width: 40px;
+                height: 40px;
+                border: 0;
+                background-color: transparent;  
+            }
+
+            input {
+                border: 0;
+                outline: 0;
+                background-color: transparent;
+                width: 260px;
+                height: 40px;
+                font-family: $heading-font;
+                text-transform: capitalize;
+                font-size: 16px;
+                font-weight: $bold;
+            }
+
+        }
+
+        @include mobile{
+            display: none;
+        }
+
+        @include small-mobile{
+            display: none;
+        }
+
+    }
+
+    #search-responsive {
+        display: none;
+        margin-left:0;
+
+        
+        @include mobile{
+            display: unset;
+        }
+
+        @include small-mobile{
+            display: unset;
+        }
+    }
+
+    .navbar-collapse .nav-item {
+        margin: 0 $sizing-standard / 2;
+        a {
+            font-family: $heading-font;
+            font-weight: $bold;
+            font-size: 16px;
+        }
+    }
+
+    .navbar-toggler {
+        border: 0;
+    }
+
+}
+
+
+

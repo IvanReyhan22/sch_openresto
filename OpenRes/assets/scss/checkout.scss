@@ -1,0 +1,227 @@
+@import "style.scss";
+
+div#checkout{
+
+    .head {
+        background-color: $base-color;
+        min-height: 400px;
+        padding: $sizing-standard * 2 0 ;
+
+        .logo {
+            width: 200px;
+            object-fit: contain;
+        }
+
+        .profle-restaurant {
+            text-align: right;
+
+            @include small-mobile {
+                text-align: left;
+                margin-top: $sizing-standard * 2;
+            }
+            p{
+                font-family: $heading-font;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: $sizing-standard;
+                margin: 0;
+            }
+
+        }
+
+        .user-profile, .booking-detail {
+            h2 {
+                font-size: 32px;
+                margin-bottom : $sizing-standard / 3;
+                margin: 0;
+            }
+
+            h3 {
+                font-size: 20px;
+                margin: 0;
+                // margin : $sizing-standard / 3 0;
+            }
+
+            h4 {
+                  margin: 0;
+                margin-bottom: $sizing-standard / 2;
+            }
+
+            p{
+                font-family: $heading-font;
+                font-weight:500;
+                font-size: 18px;
+                line-height: $sizing-standard;
+                margin: 0;
+            }
+        }
+
+        .booking-detail {
+            text-align: right;
+
+            @include small-mobile {
+                text-align: left;
+                margin-top: $sizing-standard;
+            }
+        }
+
+    }
+
+    .body {
+        padding: $sizing-standard * 2 0 ;
+        min-height: 400px;
+
+        h2 {
+            color: $gray;
+            font-size: 24px;
+        }
+
+        table {
+
+            thead tr th, tbody tr td{
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            thead tr th {
+                font-size: 24px;
+                color: $gray;
+                font-weight: 600;
+            }
+
+            tbody tr td {
+                font-weight: 500;
+                color: $black;
+                font-size: 18px;
+                border-bottom: 2px solid darken($base-color, 10%);
+            }
+
+            //COlum cell width
+            thead tr th:nth-child(1){
+                width: 50%;
+            }
+
+            thead tr th:nth-child(2){
+                width: 5%;
+            }
+
+            thead tr th:nth-child(3), tbody tr td:nth-child(3){
+                padding-left:$sizing-standard * 4;
+                width: 20%;
+            }
+
+            thead tr th:nth-child(4){
+                width: 25%;
+            }
+
+        }
+
+        .timeline{
+            
+            p{
+                width: 80%;
+            }
+
+            h1 {
+                font-size : 28px;
+            }
+
+            button {
+                border : 0;
+                outline: none;
+                background-color: $red;
+                padding: $sizing-standard / 2 $sizing-standard * 4;
+                border-radius: $border-standard * 2;
+
+                font-family: $heading-font;
+                font-weight: 600;
+                color: white;
+                transition: .3s;
+
+                &:hover {
+                    background-color: darken($red,10%)
+                }
+
+                @include small-mobile {
+                    display: none;
+                }
+            }
+        }
+
+        .total {
+
+            h3 {
+                display: inline-block;
+                width: 50%;
+                font-size: 24px;
+                color: $black;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            h1 {
+                display: inline-block;
+                text-align: right;
+                width: 50%;
+                color: $black;
+                font-size: 24px;
+                margin: 0;
+                color:$green
+            }
+
+            .item{
+                margin: $sizing-standard / 2 0;
+                padding-bottom: $sizing-standard /2;
+                border-bottom: 2px solid darken($base-color, 10%);
+
+                h3 {
+                    display: inline-block;
+                    width: 50%;
+                    font-size: 24px;
+                    color: $gray;
+                    font-weight: 600;
+                    margin: 0;
+                }
+
+                h5 {
+                    display: inline-block;
+                    text-align: right;
+                    width: 50%;
+                    font-weight: 500;
+                    color: $black;
+                    font-size: 18px;
+                    margin: 0;
+                }
+            }
+
+            button {
+                width: 100%;
+                border : 0;
+                outline: none;
+                background-color: $red;
+                padding: $sizing-standard / 2 $sizing-standard * 4;
+                border-radius: $border-standard * 2;
+
+                font-family: $heading-font;
+                font-weight: 600;
+                color: white;
+                transition: .3s;
+
+                margin-top: $sizing-standard;
+
+                &:hover {
+                    background-color: darken($red,10%)
+                }
+
+                @include tablet {
+                    display: none;
+                }
+
+                @include small-mobile {
+                    padding: $sizing-standard / 2 $sizing-standard * 2;
+                }
+            }
+        }
+    }
+
+}

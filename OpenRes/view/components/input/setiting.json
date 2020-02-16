@@ -1,0 +1,25 @@
+{
+    "files.autoSave": "afterDelay",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": false,
+    "window.zoomLevel": -1,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.sideBar.location": "left",
+    "[css]": {
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.lineHeight": 0,
+    "editor.fontSize": 16,
+    "extensions.autoUpdate": false,
+    "update.mode": "manual",
+    "update.enableWindowsBackgroundUpdates": false
+
+}

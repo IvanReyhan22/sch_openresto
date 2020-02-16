@@ -1,0 +1,29 @@
+@import "style.scss";
+
+#content{
+    margin-top: $sizing-standard * 2;
+
+    .card{
+        transition: box-shadow .3s;
+        border-radius: 6px;
+
+        .title{
+            margin-bottom: 0;
+        }
+
+        .limit{
+            color: $red;
+        }
+
+        .desc{
+            text-align: end;
+            padding-top: $sizing-standard * 1.5;
+        }
+
+        &:hover{
+            box-shadow: 0 0 11px rgba(33,33,33,.2);
+            cursor: pointer;
+        }
+    }
+
+}

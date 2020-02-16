@@ -1,0 +1,160 @@
+@import "style.scss";
+
+#restaurant {
+
+    .hr {
+        margin: $sizing-standard * 1.5 0;
+        width: 100%;
+        height: 2px;
+        background-color: darken($base-color, 20%);
+
+        @include small-mobile{
+            width: 100%;
+            height: 1px;
+            margin: $sizing-standard 0;
+        }
+    }
+
+    .big-image {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .big-image2 {
+        width: 100%;
+        height: 215px;
+        object-fit: cover;
+
+        @include mobile{
+            display: none;
+        }
+
+        @include small-mobile{
+            display: none;
+        }
+    }
+
+    .big-image2:nth-child(1){
+        margin-bottom: $sizing-standard;
+
+        @include mobile{
+            margin-bottom: 0;
+        }
+    }
+
+    #horizontal-category{
+        
+        @include mobile{
+            display: none;
+        }
+
+        @include small-mobile{
+            display: none;
+        }
+    }
+    .resto-name {
+        font-size: 36px;
+        margin-bottom: $sizing-standard / 5;
+
+        @include mobile{
+            font-size: 28px;
+        }
+
+        @include small-mobile{
+            font-size: 24px;
+        }
+    }
+
+    p{
+        @include mobile{
+            font-size: 12px;
+        }
+
+        @include small-mobile{
+            font-size: 12px;
+        }
+    }
+    .address {
+        color: $black;
+        font-weight: 600;
+
+        @include mobile{
+            font-size: 12px;
+        }
+
+        @include small-mobile{
+            font-weight: 550;
+            font-size: 14px;
+        }
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+
+        @include small-mobile{
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .sidebar {
+        top: $sizing-standard ;
+        position: sticky;
+        border: 2px solid darken($base-color, 10%);
+        padding: $sizing-standard ;
+        border-radius: $border-standard * 3;
+
+        h4 , p {
+            margin: 0;
+        }
+
+        .hr {
+            width: 100%;
+            background-color: darken($base-color,5%);
+            height: 2px;
+            margin: $sizing-standard / 2 0;
+        }
+
+        .inpt-container {
+            // label {
+
+            // }
+            input {
+                width: 100%;
+                border: 2px solid darken($base-color,5%);
+                padding: $sizing-standard / 2 $sizing-standard;
+            }
+        }
+
+        .btn-acc{
+            border: 0;
+            outline: none;
+            width: 100%;
+            padding: $sizing-standard / 3 $sizing-standard;
+            background-color: $yellow;
+            border-radius: $border-standard * 2;
+            transition: .3s;
+
+            font-weight: 600;
+            color: white;
+
+            &:hover {
+                background-color: darken($yellow,10%);
+            }
+
+        }
+
+        .checkout {
+            cursor: pointer;
+            transition: .3s;
+
+            &:hover {
+                color: $black;
+            }
+        }
+
+    }
+
+}

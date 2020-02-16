@@ -1,0 +1,14 @@
+@import "style.scss";
+
+.container{
+    .description{
+        .title{
+            h5{
+                margin-bottom: 0;
+            }
+            p{
+                color: $gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,304 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(../font/Roboto-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../font/Roboto-Medium.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../font/Roboto-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display';
+  src: url(../font/SF-Pro-Display-Regular.otf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display';
+  src: url(../font/Roboto-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display';
+  src: url(../font/SF-Pro-Display-Semibold.otf) format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display';
+  src: url(../font/SF-Pro-Display-Bold.otf) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF-Pro-Display';
+  src: url(../font/SF-Pro-Display-Heavy.otf) format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satisfy';
+  src: url(../font/Satisfy-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+* {
+  font-family: "SF-Pro-Display";
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+ol li, ul li {
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+  color: #787878;
+}
+
+p {
+  font-family: "Roboto";
+  color: #787878;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+p a {
+  font-family: "Roboto";
+  font-weight: 700;
+  color: #787878;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "SF-Pro-Display";
+  font-weight: 700;
+  color: #131313;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 1200px;
+  padding: 0 10px;
+}
+
+@media (min-width: 769px) and (max-width: 1025px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 769px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 426px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.row {
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+.clear-both {
+  clear: both;
+}
+
+#logo {
+  width: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 376px) {
+  .hide-small {
+    display: none;
+  }
+}
+
+.lg-hide {
+  display: none;
+}
+
+@media (min-width: 769px) and (max-width: 1025px) {
+  .lg-hide {
+    display: none;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 769px) {
+  .lg-hide {
+    display: unset;
+  }
+}
+
+@media (max-width: 376px) {
+  .lg-hide {
+    display: unset;
+  }
+}
+
+#navbar {
+  padding: 10px 0;
+  border: 0.5px solid #dddddd;
+}
+
+#navbar .navbar-brand .back-button {
+  display: none;
+}
+
+@media (max-width: 376px) {
+  #navbar .navbar-brand .back-button {
+    display: unset;
+  }
+}
+
+@media (max-width: 376px) {
+  #navbar .container {
+    padding: 0 20px;
+  }
+}
+
+#navbar #search, #navbar #search-responsive {
+  margin-left: 15px;
+}
+
+#navbar #search .input-group, #navbar #search-responsive .input-group {
+  height: 45px;
+  border: 0.5px solid #dddddd;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 6px rgba(19, 19, 19, 0.15);
+          box-shadow: 0px 1px 6px rgba(19, 19, 19, 0.15);
+}
+
+#navbar #search .input-group .input-group-addon button, #navbar #search-responsive .input-group .input-group-addon button {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-color: transparent;
+}
+
+#navbar #search .input-group input, #navbar #search-responsive .input-group input {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  width: 260px;
+  height: 40px;
+  font-family: "SF-Pro-Display";
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (min-width: 376px) and (max-width: 426px) {
+  #navbar #search, #navbar #search-responsive {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  #navbar #search, #navbar #search-responsive {
+    display: none;
+  }
+}
+
+#navbar #search-responsive {
+  display: none;
+  margin-left: 0;
+}
+
+@media (min-width: 376px) and (max-width: 426px) {
+  #navbar #search-responsive {
+    display: unset;
+  }
+}
+
+@media (max-width: 376px) {
+  #navbar #search-responsive {
+    display: unset;
+  }
+}
+
+#navbar .navbar-collapse .nav-item {
+  margin: 0 10px;
+}
+
+#navbar .navbar-collapse .nav-item a {
+  font-family: "SF-Pro-Display";
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#navbar .navbar-toggler {
+  border: 0;
+}
+
+.container .description .title h5 {
+  margin-bottom: 0;
+}
+
+.container .description .title p {
+  color: #787878;
+}
+/*# sourceMappingURL=detail_restaurant.css.map */
